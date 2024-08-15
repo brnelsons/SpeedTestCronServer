@@ -5,6 +5,7 @@ go 1.23.0
 require (
 	github.com/calin014/speedfast v0.0.0-20210304215439-db7179c0a474
 	github.com/robfig/cron/v3 v3.0.1
+	go.uber.org/zap v1.27.0
 )
 
 require (
@@ -22,6 +23,7 @@ require (
 	github.com/mattn/go-colorable v0.1.4 // indirect
 	github.com/mattn/go-isatty v0.0.11 // indirect
 	github.com/showwin/speedtest-go v1.1.1 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
 	golang.org/x/sys v0.0.0-20210220050731-9a76102bfb43 // indirect
 )
