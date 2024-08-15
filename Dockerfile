@@ -1,16 +1,14 @@
-FROM golang:1.23.0-alpine as go-builder
+FROM golang:1.23.0-alpine AS go-builder
+WORKDIR /build
+COPY . /build/
+RUN go build -o /dist/server ./src
 
+
+FROM rockylinux:9-minimal
 WORKDIR /app
-COPY . /app/
-RUN go build ./src -o /dist/speedtest-server
+COPY static /app/static
+COPY --from=go-builder /dist/server /app/speedtest
+RUN chmod +x /app/speedtest
 
-
-FROM rockylinux:latest
-
-WORKDIR /app
-COPY resources /app/resources
-COPY --from=go-builder /dist/speedtest-server /app/speedtest-server
-RUN chmod +x /app/speedtest-server
-
-EXPOSE 80
-CMD ["speedtest-server"]
+EXPOSE 8080
+CMD ["/app/speedtest"]
