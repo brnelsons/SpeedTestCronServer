@@ -1,13 +1,18 @@
-import {createChart} from "./modules/chart.js";
+import {createChart, updateChartData} from "./modules/chart.js";
 import {Service} from "./modules/service.js";
 
 const service = new Service()
 var historyChart;
+
+function updateChart() {
+    service.getHistory()
+        .then(data => {
+            updateChartData(historyChart, data)
+        })
+}
+
 window.onload = function() {
-    setInterval(() => {
-        service.getHistory()
-            .then(data => {
-                historyChart = createChart('chart', data)
-            })
-    }, 5000)
+    historyChart = createChart('chart');
+    updateChart()
+    setInterval(updateChart, 5000)
 }
