@@ -1,0 +1,1 @@
+.PHONY: test build dist

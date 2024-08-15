@@ -1,0 +1,19 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #e5e5e5;
+}
+
+.navigation {
+    display: flex;
+    flex: auto;
+    background-color: #a1a1a1;
+    box-shadow: 1px 4px #11111133;
+
+    .nav-title {
+        font-size: 18pt;
+        height: 40px;
+        align-content: center;
+        align-items: flex-start;
+    }
+}
