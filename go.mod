@@ -1,6 +1,6 @@
 module speedtest
 
-go 1.23.0
+go 1.22.6
 
 require (
 	github.com/calin014/speedfast v0.0.0-20210304215439-db7179c0a474

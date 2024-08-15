@@ -1,7 +1,7 @@
-FROM golang:1.23.0-alpine AS go-builder
+FROM golang:1.22.0-alpine AS go-builder
 WORKDIR /build
 COPY . /build/
-RUN go build -o /dist/server ./src
+RUN go build -o /dist/server .
 
 
 FROM rockylinux:9-minimal
